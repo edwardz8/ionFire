@@ -1,12 +1,33 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      Ionic App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://beta.ionicframework.com/docs/">docs</a> will be your guide.</p>
+
+  <ion-grid>
+    <ion-row>
+      <ion-card *ngFor="let team of teams.teams" text-center>
+
+        <h4>{{team.name}}</h4>
+        <img src="./../../assets/icon/favicon.png">
+        <ion-card-content>
+          <p>{{team.division.nameShort}} Division - {{team.conference.name}} Conference</p>
+        </ion-card-content>
+       
+        <!--   <ion-button icon-only>
+            <ion-icon name='thumbs-up'></ion-icon>
+          </ion-button> -->
+          <ion-button round color="dark">View Roster</ion-button>
+       
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
